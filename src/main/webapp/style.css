@@ -1,0 +1,15 @@
+/* wyśrodkowanie elementów, ramka i tło */
+main {
+    margin: auto;
+    background-color: brown;
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+    text-align: center;
+}
+/* Większy przycisk */
+button {
+    margin-top: 20px;
+    width: 30%;
+    height: 30px;
+}
