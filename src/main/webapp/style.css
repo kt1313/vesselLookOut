@@ -1,7 +1,7 @@
 /* wyśrodkowanie elementów, ramka i tło */
 main {
     margin: auto;
-    background-color: burlywood;
+    background-color: khaki;
     border-width: 1px;
     border-style: solid;
     padding: 5px;

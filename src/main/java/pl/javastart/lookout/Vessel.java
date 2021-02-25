@@ -41,12 +41,16 @@ public class Vessel {
         this.IMO = IMO;
     }
 
-    public Vessel(String vslName, String vslCallSign, Integer MMSI, Integer IMO){
-        this.vslName=vslName;
-        this.vslCallSign=vslCallSign;
-        this.MMSI=MMSI;
-        this.IMO=IMO;
+    public Vessel(String vslName, String vslCallSign, Integer MMSI, Integer IMO) {
+        this.vslName = vslName;
+        this.vslCallSign = vslCallSign;
+        this.MMSI = MMSI;
+        this.IMO = IMO;
 
     }
 
+    @Override
+    public String toString() {
+        return vslName + " " + vslCallSign + " " + MMSI + " " + IMO;
+    }
 }
