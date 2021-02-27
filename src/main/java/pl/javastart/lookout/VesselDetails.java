@@ -3,17 +3,13 @@ package pl.javastart.lookout;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class LookOutWebScrap {
-
-
+public class VesselDetails {
     public void main(String[] args) throws IOException {
         Connection connect = Jsoup.connect("https://www.vesselfinder.com/vessels/TELFORD-28-IMO-8769638");
         Document document = connect.get();
@@ -36,3 +32,5 @@ public class LookOutWebScrap {
         }
     }
 }
+
+
