@@ -20,12 +20,12 @@
     <main>
         <fieldset>
             <h1>Wyszukaj statek</h1>
-            <p>Podaj nazwę i wybierz z listy dostępnych lub wpisz Callsign</p>
+            <h3><p>Podaj nazwę i wybierz z listy dostępnych.</p></h3>
             <form action="" method="post">
-                <div><label for="vslname">Podaj nazwę</label>
+                <div><label for="vslname">Nazwa statku: </label>
                     <input type="text" name="vslname" id="vslname">
-                    <label for="vslcallsign">Podaj Callsign</label>
-                    <input type="text" name="vslcallsign" id="vslcallsign">
+<%--                    <label for="vslcallsign">Podaj Callsign</label>--%>
+<%--                    <input type="text" name="vslcallsign" id="vslcallsign">--%>
                 </div>
                 <button>Wyszukaj!</button>
             </form>

@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VesselDetails {
-    public void main(String[] args) throws IOException {
+//    public void main(String[] args) throws IOException {
+    public void getVslDetails() throws IOException {
+
         Connection connect = Jsoup.connect("https://www.vesselfinder.com/vessels/TELFORD-28-IMO-8769638");
         Document document = connect.get();
         List<String> fullDescription = new ArrayList<>();
