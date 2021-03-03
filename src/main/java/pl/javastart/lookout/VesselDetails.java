@@ -19,7 +19,7 @@ public class VesselDetails {
         Elements n3Elements = document.getElementsByClass("n3");
         Elements v3Elements = document.getElementsByClass("v3");
         for (int i = 0; i < v3Elements.size(); i++) {
-            fullDescription.add(n3Elements.get(i).ownText());
+            fullDescription.add(n3Elements.get(i).ownText().replace(" ", "-"));
             fullDescription.add(v3Elements.get(i).ownText());
         }
         for (int i = 0; i < fullDescription.size(); i++) {

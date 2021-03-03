@@ -31,10 +31,10 @@
             </form>
         </fieldset>
         <fieldset>
-            <c:if test="${not empty vesselData}">
+            <c:if test="${not empty ListOfVessels}">
                 <ul class="vessel-list">
-                    <c:forEach var="vessel" items="${vesselData}">
-                        <li><c:out value="${vessel}"/></li>
+                    <c:forEach var="vessel" items="${ListOfVessels}">
+                        <li><c:out value="${vessel.}"/></li>
                     </c:forEach>
                 </ul>
             </c:if>
