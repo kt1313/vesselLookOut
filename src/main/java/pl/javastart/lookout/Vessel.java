@@ -1,11 +1,9 @@
 package pl.javastart.lookout;
 
-import java.security.SecureRandom;
-
 public class Vessel {
 
     private String vslName;
-    private Integer IMO;
+    private Integer nrIMO;
 
     public String getVslName() {
         return vslName;
@@ -15,22 +13,22 @@ public class Vessel {
         this.vslName = vslName;
     }
 
-    public Integer getIMO() {
-        return IMO;
+    public Integer getNrIMO() {
+        return nrIMO;
     }
 
-    public void setIMO(Integer IMO) {
-        this.IMO = IMO;
+    public void setNrIMO(Integer nrIMO) {
+        this.nrIMO = nrIMO;
     }
 
-    public Vessel(String vslName, Integer IMO) {
+    public Vessel(String vslName, Integer nrIMO) {
         this.vslName = vslName;
-        this.IMO = IMO;
+        this.nrIMO = nrIMO;
 
     }
 
     @Override
     public String toString() {
-        return vslName + " "  + IMO;
+        return vslName + " "  + nrIMO;
     }
 }

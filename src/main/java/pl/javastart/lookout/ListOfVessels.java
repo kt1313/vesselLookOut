@@ -30,13 +30,13 @@ public ListOfVessels(List<String> listOfVesselsNames , List<String> listOfVessel
     public List<String> getListOfVesselsIMOs() {
         return listOfVesselsIMOs;
     }
+
     //metoda tworzy liste nazw statkow z nr IMO na podstawie podanej nazwy
     static public ListOfVessels getVslsList(String vslName) throws IOException {
 
           List<String> listOfVesselsNames = new ArrayList<>();
           List<String> listOfVesselsIMOs = new ArrayList<>();
 
-//        String vslName = "dolphin";
         Connection connect = Jsoup.connect("https://www.shiplocation.com/vessels?page=1&vessel=" + vslName + "&sort=none&direction=none&flag=none");
         Document document = connect.get();
         Elements vElements = document.getElementsByClass("vessel_td");
@@ -49,7 +49,7 @@ public ListOfVessels(List<String> listOfVesselsNames , List<String> listOfVessel
             //sprawdz czy element nie jest pusty i dodaj do listOfVessels
             //znajdz IMO nr, polacz z nazwa statku i dodaj do listy
             if (!e.select("a").text().equals("")) {
-                listOfVesselsNames.add(e.select("a").text());
+                listOfVesselsNames.add(e.select("a").text().replace(" ","-"));
                 listOfVesselsIMOs.add(e.parent().getElementsByClass("vessel_td td_imo").text());
             }
         }
