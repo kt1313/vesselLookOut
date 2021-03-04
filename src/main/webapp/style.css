@@ -1,5 +1,5 @@
 /* wyśrodkowanie elementów, ramka i tło */
-main {
+main, header {
     margin: auto;
     background-color: khaki;
     border-width: 1px;

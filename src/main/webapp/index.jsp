@@ -16,35 +16,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form method="post" action="lookout">
-    <main>
-        <fieldset>
-            <h1>Wyszukaj statek</h1>
-            <h3><p>Podaj nazwę i wybierz z listy dostępnych.</p></h3>
-            <form action="" method="post">
-                <div><label for="vslname">Nazwa statku: </label>
-                    <input type="text" name="vslname" id="vslname">
-<%--                    <label for="vslcallsign">Podaj Callsign</label>--%>
-<%--                    <input type="text" name="vslcallsign" id="vslcallsign">--%>
-                </div>
-                <button>Wyszukaj!</button>
-            </form>
-        </fieldset>
-        <fieldset>
-            <c:if test="${not empty ListOfVessels}">
-                <ul class="vessel-list">
-                    <c:forEach var="vessel" items="${ListOfVessels}">
-                        <li><c:out value="${vessel.}"/></li>
-                    </c:forEach>
-                </ul>
-            </c:if>
-            <c:if test="${empty vesselData}">
-                <p>Nie rozpocząłeś jeszcze wyszukiwania</p>
-            </c:if>
 
-        </fieldset>
-    </main>
-</form>
+
+<main>
+    <header>
+        <h1>Wyszukaj statek</h1>
+    </header>
+     <c:if test="${not empty vslData}">
+            <ul class="vessel-list">
+                <c:forEach var="vessel" items="${vslData}">
+                    <li><c:out value="${vessel}"/></li>
+                </c:forEach>
+            </ul>
+        </c:if>
+        <c:if test="${empty vslData}">
+            <p>Nie rozpocząłeś jeszcze wyszukiwania</p>
+        </c:if>
+        <form action="" method="post" >
+            <h3><p>Podaj nazwę i wybierz z listy dostępnych.</p></h3>
+            <div><label for="vslname">Nazwa statku: </label>
+                <input type="text" name="vslname" id="vslname">
+                <%--                    <label for="vslcallsign">Podaj Callsign</label>--%>
+                <%--                    <input type="text" name="vslcallsign" id="vslcallsign">--%>
+            </div>
+            <button>Wyszukaj!</button>
+        </form>
+</main>
 </body>
 </html>
 
