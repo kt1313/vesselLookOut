@@ -60,4 +60,12 @@ public ListOfVessels(List<String> listOfVesselsNames , List<String> listOfVessel
         System.out.println("Wybierz nr.");
         return new ListOfVessels( listOfVesselsNames,listOfVesselsIMOs);
     }
+    @Override
+    public String toString(){
+    String listItem=null;
+      for (int i = 0; i < listOfVesselsNames.size(); i++) {
+             listItem=(i + 1 + ": " + listOfVesselsNames.get(i) + " nr IMO: " + listOfVesselsIMOs.get(i));
+        }
+      return listItem;
+    }
 }

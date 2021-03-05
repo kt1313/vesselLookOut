@@ -22,14 +22,14 @@
     <header>
         <h1>Wyszukaj statek</h1>
     </header>
-     <c:if test="${not empty vslData}">
+     <c:if test="${not empty listOfVessels}">
             <ul class="vessel-list">
-                <c:forEach var="vessel" items="${vslData}">
-                    <li><c:out value="${vessel}"/></li>
+                <c:forEach var="listItem" items="${listOfVessels}">
+                    <li><c:out value="${listItem}"/></li>
                 </c:forEach>
             </ul>
         </c:if>
-        <c:if test="${empty vslData}">
+        <c:if test="${empty listOfVessels}">
             <p>Nie rozpocząłeś jeszcze wyszukiwania</p>
         </c:if>
         <form action="" method="post" >
