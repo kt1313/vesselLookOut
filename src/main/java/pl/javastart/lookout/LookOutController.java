@@ -18,14 +18,16 @@ public class LookOutController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//1. tworzy wybrana przez uzytkownika pelna nazwe statku
-        String vslName = (ListOfVessels.getVslsList(getVslName(request)).getListOfVesselsNames().get(Integer.parseInt(getUserChoice())));
-        Integer nrIMO = Integer.parseInt(ListOfVessels.getVslsList(getVslName(request)).getListOfVesselsIMOs().get(Integer.parseInt(getUserChoice())));
-        String vslNameAndIMO = vslName + "-" + nrIMO.toString();
-        //2. wyslac zadanie do strony vesselfinder z danymi: nazwa statku i nr IMO i utworzyc liste z danymi statku
-       
-        List<String> vslData = GetDetails.getVslDetails(vslNameAndIMO);
-// przekierowujemy uzytkownika do str glownej
+        //PROBA 5/3/21 utworzenia listy ze statkami do wyswietlenia na stronie
+        List<String> listOfVessels=ListOfVessels.getVslsList(getVslName(request));
+////1. tworzy wybrana przez uzytkownika pelna nazwe statku
+//        String vslName = ListOfVessels.getVslsList(getVslName(request)).getListOfVesselsNames().get(Integer.parseInt(getUserChoice()));
+//        Integer nrIMO = Integer.parseInt(ListOfVessels.getVslsList(getVslName(request)).getListOfVesselsIMOs().get(Integer.parseInt(getUserChoice())));
+//        String vslNameAndIMO = vslName + "-" + nrIMO.toString();
+//        //2. wyslac zadanie do strony vesselfinder z danymi: nazwa statku i nr IMO i utworzyc liste z danymi statku
+//
+//        List<String> vslData = GetDetails.getVslDetails(vslNameAndIMO);
+//// przekierowujemy uzytkownika do str glownej
         response.sendRedirect(request.getContextPath());
     }
 
