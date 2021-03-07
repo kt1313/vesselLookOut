@@ -22,14 +22,21 @@
     <header>
         <h1>Wyszukaj statek</h1>
     </header>
-     <c:if test="${not empty listOfVesselsWIthNameAndIMO}">
-            <ul class="vessel-list">
-                <c:forEach var="listOfVesselsItem" items="${listOfVesselsWIthNameAndIMO}">
-                    <li><c:out value="${listOfVesselsItem}"/></li>
-                </c:forEach>
-            </ul>
-        </c:if>
-        <c:if test="${empty listOfVesselsWIthNameAndIMO}">
+<%--     <c:if test="${not empty listOfVesselsWithNameAndIMO}">--%>
+<%--            <ul class="vessel-list">--%>
+<%--                <c:forEach var="listOfVesselsItem" items="${listOfVesselsWithNameAndIMO}">--%>
+<%--                    <li><c:out value="${listOfVesselsItem}"/></li>--%>
+<%--                </c:forEach>--%>
+<%--            </ul>--%>
+<%--        </c:if>--%>
+    <c:if test="${not empty exampleList}">
+        <ul class="vessel-list">
+            <c:forEach var="vsl" items="${exampleList}">
+                <li><c:out value="${listOfVesselsItem}"/></li>
+            </c:forEach>
+        </ul>
+    </c:if>
+        <c:if test="${empty exampleList}">
             <p>Nie rozpocząłeś jeszcze wyszukiwania</p>
         </c:if>
         <form action="" method="post" >

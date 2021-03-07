@@ -73,6 +73,13 @@ public class ListOfVessels {
         return listOfVesselsWithNamesAndIMO;
     }
 
+    static public List<String> exampleList(){
+        List<String> exampleList= new ArrayList<>();
+        for (int i=1;i<4;i++){
+            exampleList.add("Telford "+i+"IMO nr: "+i*234);
+        }
+        return exampleList;
+    }
     @Override
     public String toString() {
         String listItem = null;
