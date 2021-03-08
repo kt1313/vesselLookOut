@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,7 +26,7 @@ public class LookOutController extends HttpServlet {
 //        List<String> listOfVessels=ListOfVessels.getVslsList(getVslName(request));
 //        createVesselsList(listOfVessels);
         //PROBA 7 marzec, przykladowa lista
-        ListOfVessels.exampleList();
+        createExampleList();
 
 ////1. tworzy wybrana przez uzytkownika pelna nazwe statku
 //        String vslName = ListOfVessels.getVslsList(getVslName(request)).getListOfVesselsNames().get(Integer.parseInt(getUserChoice()));
@@ -53,13 +54,11 @@ public class LookOutController extends HttpServlet {
 //      //  lisOfVesselsWithNamesAndIMO
                 context.setAttribute("listOfVesselsWithNamesAndIMO", lisOfVesselsWithNamesAndIMO);
     }
-//    private void saveMessageInHistory(Message message, HttpServletRequest request) {
-//        ServletContext context = getServletContext();
-//        List<Message> messageHistory = (List<Message>) context.getAttribute("messageHistory");
-//        if (messageHistory == null) {
-//            messageHistory = new ArrayList<>();
-//        }
-//        messageHistory.add(message);
-//        context.setAttribute("messageHistory", messageHistory);
-//    }
+    private List<String> createExampleList(){
+        ServletContext context =getServletContext();
+        List<String> exampleList= (List<String>) context.getAttribute("exampleList");
+        exampleList= Arrays.asList("Telford 1, IMO nr 12345", "Telford 2, IMO nr 54321", "Telford 3, IMO nr 98765");
+        context.setAttribute("exampleList", exampleList);
+        return exampleList;
+    }
 }

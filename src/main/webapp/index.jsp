@@ -22,6 +22,13 @@
     <header>
         <h1>Wyszukaj statek</h1>
     </header>
+    <form action="" method="post" >
+        <h3><p>Podaj nazwę i wybierz z listy dostępnych.</p></h3>
+        <div><label for="vslname">Nazwa statku: </label>
+            <input type="text" name="vslname" id="vslname">
+        </div>
+        <button>Wyszukaj!</button>
+    </form>
 <%--     <c:if test="${not empty listOfVesselsWithNameAndIMO}">--%>
 <%--            <ul class="vessel-list">--%>
 <%--                <c:forEach var="listOfVesselsItem" items="${listOfVesselsWithNameAndIMO}">--%>
@@ -32,20 +39,14 @@
     <c:if test="${not empty exampleList}">
         <ul class="vessel-list">
             <c:forEach var="vsl" items="${exampleList}">
-                <li><c:out value="${listOfVesselsItem}"/></li>
+                <li><c:out value="${exampleList}"/></li>
             </c:forEach>
         </ul>
     </c:if>
         <c:if test="${empty exampleList}">
             <p>Nie rozpocząłeś jeszcze wyszukiwania</p>
         </c:if>
-        <form action="" method="post" >
-            <h3><p>Podaj nazwę i wybierz z listy dostępnych.</p></h3>
-            <div><label for="vslname">Nazwa statku: </label>
-                <input type="text" name="vslname" id="vslname">
-            </div>
-            <button>Wyszukaj!</button>
-        </form>
+
 </main>
 </body>
 </html>

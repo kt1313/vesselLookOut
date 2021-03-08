@@ -73,10 +73,11 @@ public class ListOfVessels {
         return listOfVesselsWithNamesAndIMO;
     }
 
-    static public List<String> exampleList(){
+    static public List<String> createExampleList(){
         List<String> exampleList= new ArrayList<>();
         for (int i=1;i<4;i++){
-            exampleList.add("Telford "+i+"IMO nr: "+i*234);
+            exampleList.add("Telford "+i+" IMO nr: "+i*234);
+            System.out.println(exampleList.get(i-1));
         }
         return exampleList;
     }
