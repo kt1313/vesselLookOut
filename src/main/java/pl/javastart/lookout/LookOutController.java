@@ -22,21 +22,13 @@ public class LookOutController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        //PROBA 5/3/21 utworzenia listy ze statkami do wyswietlenia na stronie
-//        List<String> listOfVessels=ListOfVessels.getVslsList(getVslName(request));
-//        createVesselsList(listOfVessels);
-        //PROBA 7 marzec, przykladowa lista
-        createExampleList();
-
-////1. tworzy wybrana przez uzytkownika pelna nazwe statku
-//        String vslName = ListOfVessels.getVslsList(getVslName(request)).getListOfVesselsNames().get(Integer.parseInt(getUserChoice()));
-//        Integer nrIMO = Integer.parseInt(ListOfVessels.getVslsList(getVslName(request)).getListOfVesselsIMOs().get(Integer.parseInt(getUserChoice())));
-//        String vslNameAndIMO = vslName + "-" + nrIMO.toString();
-//        //2. wyslac zadanie do strony vesselfinder z danymi: nazwa statku i nr IMO i utworzyc liste z danymi statku
-//
-//        List<String> vslData = GetDetails.getVslDetails(vslNameAndIMO);
-//// przekierowujemy uzytkownika do str glownej
-        response.sendRedirect(request.getContextPath());
+//        PROBA 8/3/21 utworzenia listy ze statkami do wyswietlenia na stronie
+        //najpierw listę sama do konsoli
+//        ListOfVessels.getVslsList(getVslName(request));
+        createVesselsList(getVslName(request));
+//        PROBA 7 marzec, przykladowa lista )(DZIALA)
+//       createExampleList();
+       response.sendRedirect(request.getContextPath());
     }
 
     private String getVslName(HttpServletRequest request) {
@@ -49,11 +41,18 @@ public class LookOutController extends HttpServlet {
         String userChoice = sc.nextLine();
         return userChoice;
     }
-    private void createVesselsList(List<String> lisOfVesselsWithNamesAndIMO){
-        ServletContext context=getServletContext();
-//      //  lisOfVesselsWithNamesAndIMO
-                context.setAttribute("listOfVesselsWithNamesAndIMO", lisOfVesselsWithNamesAndIMO);
+
+    private List<String> createVesselsList( String vslName) throws IOException {
+        ServletContext context = getServletContext();
+        List<String> listOfVesselsWithNamesAndIMO = (List<String>) context.getAttribute("listOfVesselsWithNamesAndIMO");
+        listOfVesselsWithNamesAndIMO = ListOfVessels.getVslsList(vslName);
+        context.setAttribute("listOfVesselsWithNamesAndIMO",listOfVesselsWithNamesAndIMO);
+        System.out.println(listOfVesselsWithNamesAndIMO.get(1));
+        System.out.println(context);
+        return listOfVesselsWithNamesAndIMO;
     }
+
+    //ta proba działała 8 marca
     private List<String> createExampleList(){
         ServletContext context =getServletContext();
         List<String> exampleList= (List<String>) context.getAttribute("exampleList");

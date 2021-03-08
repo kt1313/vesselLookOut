@@ -36,14 +36,14 @@
 <%--                </c:forEach>--%>
 <%--            </ul>--%>
 <%--        </c:if>--%>
-    <c:if test="${not empty exampleList}">
-        <ul class="vessel-list">
-            <c:forEach var="vsl" items="${exampleList}">
-                <li><c:out value="${exampleList}"/></li>
+    <c:if test="${not empty listOfVesselsWithNamesAndIMO}">
+        <ul class="message-list">
+            <c:forEach var="message" items="${listOfVesselsWithNamesAndIMO}">
+                <li><c:out value="${message}"/></li>
             </c:forEach>
         </ul>
     </c:if>
-        <c:if test="${empty exampleList}">
+        <c:if test="${empty listOfVesselsWithNameAndIMO}">
             <p>Nie rozpocząłeś jeszcze wyszukiwania</p>
         </c:if>
 
