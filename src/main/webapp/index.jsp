@@ -29,18 +29,18 @@
         </div>
         <button>Wyszukaj!</button>
     </form>
-<%--     <c:if test="${not empty listOfVesselsWithNameAndIMO}">--%>
-<%--            <ul class="vessel-list">--%>
-<%--                <c:forEach var="listOfVesselsItem" items="${listOfVesselsWithNameAndIMO}">--%>
-<%--                    <li><c:out value="${listOfVesselsItem}"/></li>--%>
-<%--                </c:forEach>--%>
-<%--            </ul>--%>
-<%--        </c:if>--%>
+
     <c:if test="${not empty listOfVesselsWithNamesAndIMO}">
         <ul class="message-list">
             <c:forEach var="message" items="${listOfVesselsWithNamesAndIMO}">
-                <li><c:out value="${message}"/></li>
+                <var i=0;></var>
+                <li><c:out value=""/>
+                    <input type="radio" name="choice" value="message">"${message}"</li>
+
             </c:forEach>
+            <p></p>
+            <input type="button" id="btn" value="Pokaż szczegóły">
+
         </ul>
     </c:if>
         <c:if test="${empty listOfVesselsWithNameAndIMO}">

@@ -26,8 +26,7 @@ public class LookOutController extends HttpServlet {
         //najpierw listę sama do konsoli
 //        ListOfVessels.getVslsList(getVslName(request));
         createVesselsList(getVslName(request));
-//        PROBA 7 marzec, przykladowa lista )(DZIALA)
-//       createExampleList();
+
        response.sendRedirect(request.getContextPath());
     }
 
@@ -52,12 +51,5 @@ public class LookOutController extends HttpServlet {
         return listOfVesselsWithNamesAndIMO;
     }
 
-    //ta proba działała 8 marca
-    private List<String> createExampleList(){
-        ServletContext context =getServletContext();
-        List<String> exampleList= (List<String>) context.getAttribute("exampleList");
-        exampleList= Arrays.asList("Telford 1, IMO nr 12345", "Telford 2, IMO nr 54321", "Telford 3, IMO nr 98765");
-        context.setAttribute("exampleList", exampleList);
-        return exampleList;
-    }
+
 }
