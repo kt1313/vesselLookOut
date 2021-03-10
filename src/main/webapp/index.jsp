@@ -12,40 +12,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vessel Look Out</title>
+    <title>Look Out - find your ship</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
 <main>
     <header>
-        <h1>Wyszukaj statek</h1>
+        <h1>Look for your vessel!</h1>
     </header>
-    <form action="" method="post" >
-        <h3><p>Podaj nazwę i wybierz z listy dostępnych.</p></h3>
-        <div><label for="vslname">Nazwa statku: </label>
+    <form action="" method="post">
+        <h3><p>Type a vessel name and choose from the list:</p></h3>
+        <div><label for="vslname">Vessel Name: </label>
             <input type="text" name="vslname" id="vslname">
         </div>
-        <button>Wyszukaj!</button>
+        <button>Search!</button>
     </form>
 
-    <c:if test="${not empty listOfVesselsWithNamesAndIMO}">
-        <ul class="message-list">
-            <c:forEach var="message" items="${listOfVesselsWithNamesAndIMO}">
-                <var i=0;></var>
-                <li><c:out value=""/>
-                    <input type="radio" name="choice" value="message">"${message}"</li>
 
-            </c:forEach>
-            <p></p>
-            <input type="button" id="btn" value="Pokaż szczegóły">
+        <c:if test="${not empty listOfVesselsWithNamesAndIMO}">
+            <ul class="vsl-list">
+                <c:out value="vslname">"${vslname}"</c:out>
+                <c:out value=""/>
+                <c:forEach var="vsl" items="${listOfVesselsWithNamesAndIMO}">
+                    <var i=0;></var>
+                    <li><c:out value=""/>
+                        <input type="radio" name="choice" value="vsl">"${vsl}"
+                    </li>
 
-        </ul>
-    </c:if>
-        <c:if test="${empty listOfVesselsWithNameAndIMO}">
-            <p>Nie rozpocząłeś jeszcze wyszukiwania</p>
+                </c:forEach>
+                <p></p>
+                <button type="button" id="btn">Show Details</button>
+            </ul>
         </c:if>
+        <c:if test="${empty listOfVesselsWithNameAndIMO}">
+            <p>Searching not started yet</p>
+        </c:if>
+
+    <%--    <input type="button" id="btn" value="Show Details">--%>
 
 </main>
 </body>

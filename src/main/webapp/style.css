@@ -13,3 +13,8 @@ button {
     width: 30%;
     height: 30px;
 }
+.vsl-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
