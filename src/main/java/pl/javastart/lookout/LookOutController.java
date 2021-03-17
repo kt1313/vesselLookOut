@@ -26,6 +26,11 @@ public class LookOutController extends HttpServlet {
         //najpierw listę sama do konsoli
 //        ListOfVessels.getVslsList(getVslName(request));
         createVesselsList(getVslName(request));
+//16 marca proba obslugi przycisku "Show details"
+        // sprawdza czy przycisniety isButtonClicked
+         
+//        String vslNameAndIMO = request.getParameter("selectedValue");
+//        GetDetails.getVslDetails(vslNameAndIMO);
 
        response.sendRedirect(request.getContextPath());
     }

@@ -29,25 +29,48 @@
     </form>
 
 
-        <c:if test="${not empty listOfVesselsWithNamesAndIMO}">
-            <ul class="vsl-list">
-                <c:out value="vslname">"${vslname}"</c:out>
-                <c:out value=""/>
-                <c:forEach var="vsl" items="${listOfVesselsWithNamesAndIMO}">
-                    <var i=0;></var>
-                    <li><c:out value=""/>
-                        <input type="radio" name="choice" value="vsl">"${vsl}"
-                    </li>
+    <c:if test="${not empty listOfVesselsWithNamesAndIMO}">
+        <ul class="vsl-list">
+            <p></p>
+            <c:out value="vslname">vslname</c:out>
+            <p></p>
+            <c:forEach var="vsl" items="${listOfVesselsWithNamesAndIMO}">
+                <var i=0;></var>
+                <li><c:out value=""/>
+                    <input type="radio" name="choice" value="vsl">"${vsl}"
+                </li>
 
-                </c:forEach>
-                <p></p>
-                <button type="button" id="btn">Show Details</button>
-            </ul>
-        </c:if>
-        <c:if test="${empty listOfVesselsWithNameAndIMO}">
-            <p>Searching not started yet</p>
-        </c:if>
+            </c:forEach>
+            <p></p>
+            <button type="button" id="btn">Show details</button>
 
+        </ul>
+    </c:if>
+    <c:if test="${empty listOfVesselsWithNameAndIMO}">
+        <p>Searching not started yet</p>
+    </c:if>
+    <c:if test="${not empty fullVslDescription}">
+    <ul class ="vsl-details">
+
+        </ul>
+<%--    <script>--%>
+<%--        function showVslDetails() {--%>
+<%--            const btn = document.querySelector('#btn');--%>
+<%--// obsluga click button--%>
+<%--            btn.onclick = function () {--%>
+<%--                const rbs = document.querySelectorAll('input[name="choice"]');--%>
+<%--                let selectedValue;--%>
+<%--                for (const rb of rbs) {--%>
+<%--                    if (rb.checked) {--%>
+<%--                        selectedValue = rb.value;--%>
+<%--                        break;--%>
+<%--                    }--%>
+<%--                }--%>
+<%--                alert(selectedValue);--%>
+<%--                //         gameDetailsParagraph.textContent = `Opis gry: ${game.description}`;--%>
+<%--            }--%>
+<%--        }--%>
+<%--    </script>--%>
     <%--    <input type="button" id="btn" value="Show Details">--%>
 
 </main>
