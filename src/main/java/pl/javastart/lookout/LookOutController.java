@@ -31,7 +31,7 @@ public class LookOutController extends HttpServlet {
          
 //        String vslNameAndIMO = request.getParameter("selectedValue");
 //        GetDetails.getVslDetails(vslNameAndIMO);
-
+GetDetails.testMethod();
        response.sendRedirect(request.getContextPath());
     }
 
