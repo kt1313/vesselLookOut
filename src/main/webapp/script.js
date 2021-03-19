@@ -1,27 +1,23 @@
-function showVslDetails() {
-    const btn = document.querySelector('#btn');
-// handle click button
-    btn.onclick = function () {
-        const rbs = document.querySelectorAll('input[name="choice"]');
-        let selectedValue;
-        for (const rb of rbs) {
-            if (rb.checked) {
-                selectedValue = rb.value;
-                break;
-            }
-        }
-        alert(selectedValue);
-        //         gameDetailsParagraph.textContent = `Opis gry: ${game.description}`;
-    }
-}
+function showDetails() {
+//     <%
+// GetDetails test=new GetDetails();
+// test.testMethod2();
+// %>
+    // GetDetails test=new GetDetails();
+var str =test.testMethod2();
+    //
+    // document.getElementById("demo").innerHTML = "testestest";
+    // var str = "The best things in life are free";
+    // var patt = new RegExp("f");
+    // var res = patt.test(str);
+    // document.getElementById("demo").innerHTML = res;
+document.getElementById("demo").innerHTML = str;
 
-// function createDetailsButton() {
-//     let detailsButton = createButton("Pokaż szczegóły");
-//     detailsButton.onclick = () => {
-//         let rowIndex = detailsButton.parentNode.parentNode.rowIndex - 1;
-//         let game = games[rowIndex];
-//         let gameDetailsParagraph = document.getElementById("game-details");
-//         gameDetailsParagraph.textContent = `Opis gry: ${game.description}`;
-//     };
-//     return detailsButton;
-// }
+        var temporaryList = [];
+        temporaryList = document.getElementById(fullVslDescription);
+        if (temporaryList != null) {
+            for (var i = 0; i <= temporaryList.length; i++) ;
+            document.getElementById("demo").innerHTML = temporaryList[i];
+        }
+
+}

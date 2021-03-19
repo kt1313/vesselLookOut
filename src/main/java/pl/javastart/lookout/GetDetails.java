@@ -44,6 +44,10 @@ public class GetDetails {
 
         return fullVslDescription;
     }
+    static public String testMethod2(){
+        System.out.println("testetstest");
+        return "testetsttest";
+    }
 }
 
 

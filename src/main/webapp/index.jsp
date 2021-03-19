@@ -1,4 +1,4 @@
-<%--
+<%@ page import="pl.javastart.lookout.GetDetails" %><%--
   Created by IntelliJ IDEA.
   User: Dell
   Date: 2021-02-23
@@ -14,11 +14,13 @@
     <meta charset="UTF-8">
     <title>Look Out - find your ship</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}script.js"></script>
 </head>
 <body>
 <header>
     <h1>Look for your vessel!</h1>
 </header>
+
 <main>
     <form action="" method="post">
         <h3><p>Type a vessel name and choose from the list:</p></h3>
@@ -43,7 +45,8 @@
             </c:forEach>
             <p></p>
             <button onclick="showDetails()" id="btn">Show details</button>
-
+            <button onclick="f_pokaz()">Pokaz</button><button onclick="f_ukryj()">Ukryj</button>
+            <div id="div"></div>
         </ul>
     </c:if>
 
@@ -51,50 +54,38 @@
         <p>Searching not started yet</p>
     </c:if>
     <p id="demo"></p>
-    <script>
-        function showDetails() {
-            var str = "The best things in life are free";
-            var patt = new RegExp("f");
-            var res = patt.test(str);
-            document.getElementById("demo").innerHTML = res;
-
-            var temporaryList = [];
-            temporaryList = document.getElementById(fullVslDescription);
-            if (temporaryList != null) {
-                for (var i = 0; i <= temporaryList.length; i++) ;
-
-            }
-            // <input type="text" name="vslDetail" id="vslDetail"></input>
-
-            <%--    <ul class ="vsl-details">--%>
-            <%--<c:forEach var="detail" items="${fullVslDescription}">--%>
-            <%--    &lt;%&ndash;<var i=0></var>&ndash;%&gt;--%>
-            <%--    <li><c:out value =""/>--%>
-            <%--    </li>--%>
-            <%--</c:forEach>--%>
-            <%--            </ul>--%>
-            <%--    </c:if>--%>
-        }
-    </script>
-    <%--    <script>--%>
-    <%--        function showVslDetails() {--%>
-    <%--            const btn = document.querySelector('#btn');--%>
-    <%--// obsluga click button--%>
-    <%--            btn.onclick = function () {--%>
-    <%--                const rbs = document.querySelectorAll('input[name="choice"]');--%>
-    <%--                let selectedValue;--%>
-    <%--                for (const rb of rbs) {--%>
-    <%--                    if (rb.checked) {--%>
-    <%--                        selectedValue = rb.value;--%>
-    <%--                        break;--%>
-    <%--                    }--%>
-    <%--                }--%>
-    <%--                alert(selectedValue);--%>
-    <%--            }--%>
-    <%--        }--%>
-    <%--    </script>--%>
-
 </main>
 </body>
 </html>
+<script>function showDetails() {
+//     <%
+// GetDetails test=new GetDetails();
+// test.testMethod2();
+// %>
+    // GetDetails test=new GetDetails();
+    var str =test.testMethod2();
+    //
+    // document.getElementById("demo").innerHTML = "testestest";
+    // var str = "The best things in life are free";
+    // var patt = new RegExp("f");
+    // var res = patt.test(str);
+    // document.getElementById("demo").innerHTML = res;
+    document.getElementById("demo").innerHTML = str;
 
+    var temporaryList = [];
+    temporaryList = document.getElementById(fullVslDescription);
+    if (temporaryList != null) {
+        for (var i = 0; i <= temporaryList.length; i++) ;
+        document.getElementById("demo").innerHTML = temporaryList[i];
+    }
+
+}</script>
+<script>
+    function f_pokaz(){
+        var sText="stststststs"
+        document.getElementById("div").innerHTML=sText;
+    }
+    function f_ukryj(){
+        oDivWithInput.innerHTML='';
+    }
+</script>
