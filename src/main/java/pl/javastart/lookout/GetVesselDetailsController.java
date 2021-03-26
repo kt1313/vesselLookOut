@@ -7,9 +7,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import javax.swing.text.Document;
 import java.io.IOException;
 
-@WebServlet("/getVesselDetails")
+@WebServlet("/getVesselDetailsController")
 public class GetVesselDetailsController extends HttpServlet {
 
 
@@ -20,11 +21,16 @@ public class GetVesselDetailsController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 //tu należy otrzymac szczegoly vslNameAndIMO z buttona
-        String vslNameAndIMO = request.getParameter("selectedValue");
-        GetDetails.getVslDetails(vslNameAndIMO);
-
-        response.sendRedirect(request.getContextPath());
+        //wchodzi tu bo wcisniety przycisk
+        //sprawdz ktory radio zaznaczony
+        if (document.getElementByName('vslChosen').checked) {
+             String vslNameAndIMO = document.getElementById('vslChosen').value;
+        }
+//        String vslNameAndIMO = request.getParameter("selectedValue");
+//        GetDetails.getVslDetails(vslNameAndIMO);
+//        response.sendRedirect(request.getContextPath());
     }
+
 }
 
 

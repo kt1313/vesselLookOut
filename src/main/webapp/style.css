@@ -1,7 +1,7 @@
 /* wyśrodkowanie elementów, ramka i tło */
-main, header {
+main,header {
     margin: auto;
-    background-color: khaki;
+    background-color: mediumaquamarine;
     border-width: 1px;
     border-style: solid;
     padding: 5px;
@@ -12,9 +12,18 @@ button {
     margin-top: 20px;
     width: 30%;
     height: 30px;
+    background-color: mediumaquamarine;
 }
 .vsl-list {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+main {
+    margin: auto;
+    background-color: azure;
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+    text-align: center;
 }

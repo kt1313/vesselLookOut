@@ -22,12 +22,9 @@ public class LookOutController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//        PROBA 8/3/21 utworzenia listy ze statkami do wyswietlenia na stronie
-        //najpierw listę sama do konsoli
-//        ListOfVessels.getVslsList(getVslName(request));
         createVesselsList(getVslName(request));
-//16 marca proba obslugi przycisku "Show details"
-        // sprawdza czy przycisniety isButtonClicked
+//23 marca proba obslugi przycisku "Show details"
+
          
 //        String vslNameAndIMO = request.getParameter("selectedValue");
 //        GetDetails.getVslDetails(vslNameAndIMO);
