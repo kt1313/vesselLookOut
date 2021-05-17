@@ -23,9 +23,13 @@ public class GetVesselDetailsController extends HttpServlet {
 //tu należy otrzymac szczegoly vslNameAndIMO z buttona
         //wchodzi tu bo wcisniety przycisk
         //sprawdz ktory radio zaznaczony
-        if (document.getElementByName('vslChosen').checked) {
-             String vslNameAndIMO = document.getElementById('vslChosen').value;
-        }
+        System.out.println("pomiedzy tutaj a");
+        System.out.println(request.getParameter("vslChosen"));
+        System.out.println("ttuuuutaj??");
+
+//        if (document.getElementByName('vslChosen').checked) {
+//             String vslNameAndIMO = document.getElementByName('vslChosen:checked').value;
+//        }
 //        String vslNameAndIMO = request.getParameter("selectedValue");
 //        GetDetails.getVslDetails(vslNameAndIMO);
 //        response.sendRedirect(request.getContextPath());

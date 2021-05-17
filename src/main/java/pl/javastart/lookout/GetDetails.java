@@ -36,18 +36,6 @@ public class GetDetails {
         return fullVslDescription;
     }
 
-    static public List<String> testMethod() throws IOException {
-        List<String> fullVslDescription = new ArrayList<>();
-        fullVslDescription.add("element1");
-        fullVslDescription.add("element2");
-        fullVslDescription.add("element3");
-
-        return fullVslDescription;
-    }
-    static public String testMethod2(){
-        System.out.println("testetstest");
-        return "testetsttest";
-    }
 }
 
 

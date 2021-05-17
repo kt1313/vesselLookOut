@@ -65,13 +65,6 @@ public class ListOfVessels {
         return listOfVesselsWithNamesAndIMO;
     }
 
-//     public List<String> createListOfVesselsWithNamesAndIMO(List<String> listOfVessels) {
-//        List<String> listOfVesselsWithNamesAndIMO = new ArrayList<>();
-//        for (int i = 0; i < listOfVesselsNames.size(); i++) {
-//           listOfVesselsWithNamesAndIMO.add(listOfVesselsNames.get(i)+"-"+listOfVesselsIMOs);
-//        }
-//        return listOfVesselsWithNamesAndIMO;
-//    }
 
     @Override
     public String toString() {

@@ -23,6 +23,8 @@
 
     //listuje statki o podobnej nazwie jesli wcisniety przycisk Search
     <c:if test="${not empty listOfVesselsWithNamesAndIMO}">
+        <form action="getVesselDetailsController" method="post">
+
         <ul class="vsl-list">
             <p></p>
             <c:out value="Looking for ">vslname</c:out>
@@ -30,23 +32,25 @@
             <c:forEach var="vsl" items="${listOfVesselsWithNamesAndIMO}">
                 <var i=0;></var>
                 <li><c:out value=""/>
-                    <input type="radio" name="vslChosen" value="vsl">"${vsl}"
+                    <input type="radio" name="vslChosen" value="${vsl}">${vsl}
                 </li>
             </c:forEach>
 
-            <form action="getVesselDetailsController">
-                <button id="showDetails">Show details</button>
+                <button id="showDetails!!!">Show details</button>
                 <div id="div"></div>
-            </form>
         </ul>
-    </c:if>
+        </form>
 
-    <c:if test="${empty listOfVesselsWithNameAndIMO}">
-        <p>Searching not started yet</p>
+</p>
     </c:if>
+    <c:if test="${empty listOfVesselsWithNameAndIMO}">
+
+            <p>Searching not started yet</p>
+</c:if>
 
     //listuje szczegóły wybranego statku
     <c:if test="${not empty fullVslDescription}">
+
         <ul class="vsl-list">
             <c:forEach var="vslDetails" items="${fullVslDescription}">
             <var i=0;></var>

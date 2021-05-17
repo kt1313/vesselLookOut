@@ -23,13 +23,8 @@ public class LookOutController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         createVesselsList(getVslName(request));
-//23 marca proba obslugi przycisku "Show details"
-
-         
-//        String vslNameAndIMO = request.getParameter("selectedValue");
-//        GetDetails.getVslDetails(vslNameAndIMO);
-GetDetails.testMethod();
-       response.sendRedirect(request.getContextPath());
+       // GetDetails.testMethod();
+        response.sendRedirect(request.getContextPath());
     }
 
     private String getVslName(HttpServletRequest request) {
@@ -43,13 +38,13 @@ GetDetails.testMethod();
         return userChoice;
     }
 
-    private List<String> createVesselsList( String vslName) throws IOException {
+    private List<String> createVesselsList(String vslName) throws IOException {
         ServletContext context = getServletContext();
         List<String> listOfVesselsWithNamesAndIMO = (List<String>) context.getAttribute("listOfVesselsWithNamesAndIMO");
         listOfVesselsWithNamesAndIMO = ListOfVessels.getVslsList(vslName);
-        context.setAttribute("listOfVesselsWithNamesAndIMO",listOfVesselsWithNamesAndIMO);
-        System.out.println(listOfVesselsWithNamesAndIMO.get(1));
-        System.out.println(context);
+        context.setAttribute("listOfVesselsWithNamesAndIMO", listOfVesselsWithNamesAndIMO);
+       // System.out.println(listOfVesselsWithNamesAndIMO.get(1));
+       // System.out.println(context);
         return listOfVesselsWithNamesAndIMO;
     }
 

@@ -1,6 +1,11 @@
 package pl.javastart.lookout.buttons;
 
-public class public class ButtonPanel extends JPanel implements ActionListener{
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Button extends JPanel implements ActionListener{
 
     public static final int HEIGHT = 100;
     public static final int WIDTH = 300;
@@ -8,12 +13,12 @@ public class public class ButtonPanel extends JPanel implements ActionListener{
     private JButton blueButton;
     private JButton redButton;
 
-    public ButtonPanel() {
+    public Button() {
         greenButton = new JButton("Green");
         blueButton = new JButton("Blue");
         redButton = new JButton("Red");
 
-        greenButton.addActionListener(this);
+        greenButton.addActionListener((ActionListener) this);
         blueButton.addActionListener(this);
         redButton.addActionListener(this);
 
@@ -37,5 +42,4 @@ public class public class ButtonPanel extends JPanel implements ActionListener{
         else if(source == redButton)
             setBackground(Color.RED);
     }
-}Button {
 }
