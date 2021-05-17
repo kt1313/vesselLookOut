@@ -24,7 +24,6 @@ public class LookOutController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         createVesselsList(getVslName(request));
         response.sendRedirect(request.getContextPath());
-//        createVesselDetails(vslChosen(request));
     }
 
     private String getVslName(HttpServletRequest request) {
