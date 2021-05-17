@@ -50,12 +50,14 @@
 
     //listuje szczegóły wybranego statku
     <c:if test="${not empty fullVslDescription}">
-
+<%--    <form action="getDetails" method="post">--%>
         <ul class="vsl-list">
             <c:forEach var="vslDetails" items="${fullVslDescription}">
             <var i=0;></var>
             <li><c:out value="${vslDetails}"/></li>
             </c:forEach>
+        </ul>
+<%--    </form>--%>
     </c:if>
 </main>
 </body>

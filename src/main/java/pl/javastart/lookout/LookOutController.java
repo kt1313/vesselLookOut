@@ -23,7 +23,6 @@ public class LookOutController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         createVesselsList(getVslName(request));
-       // GetDetails.testMethod();
         response.sendRedirect(request.getContextPath());
     }
 

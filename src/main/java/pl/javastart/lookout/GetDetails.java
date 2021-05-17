@@ -17,22 +17,23 @@ public class GetDetails {
         Connection connect = Jsoup.connect("https://www.vesselfinder.com/vessels/" + vslNameAndIMO);
         Document document = connect.get();
         List<String> fullVslDescription = new ArrayList<>();
-        Elements n3Elements = document.getElementsByClass("n3");
-        Elements v3Elements = document.getElementsByClass("v3");
-        for (int i = 0; i < v3Elements.size(); i++) {
-            fullVslDescription.add(n3Elements.get(i).ownText());
-            fullVslDescription.add(v3Elements.get(i).ownText());
+//        Elements n3Elements = document.getElementsByClass("n3");
+//        Elements v3Elements = document.getElementsByClass("v3");
+//        for (int i = 0; i < v3Elements.size(); i++) {
+//            fullVslDescription.add(n3Elements.get(i).ownText());
+//            fullVslDescription.add(v3Elements.get(i).ownText());
+//        }
+        Elements coordinatesLatElements=document.getElementsByClass("coordinate lat");
+        Elements coordinatesLonElements=document.getElementsByClass("coordinate lon");
+
+        for (int i = 0; i < coordinatesLatElements.size(); i++) {
+            fullVslDescription.add(coordinatesLatElements.get(i).ownText());
+            fullVslDescription.add(coordinatesLonElements.get(i).ownText());
         }
-        for (int i = 0; i < fullVslDescription.size(); i++) {
-            if (fullVslDescription.get(i).equals("Coordinates")) {
-                System.out.println();
-                System.out.println("Coordinates: " + fullVslDescription.get(i + 1));
-                System.out.println("-----------------------");
-            }
-        }
-        for (String s : fullVslDescription) {
-            System.out.println(s);
-        }
+        System.out.println("Vessel: "+vslNameAndIMO);
+            System.out.println("Coordinate Lat: "+fullVslDescription.get(0) );
+            System.out.println("Coordinate Long: "+fullVslDescription.get(1) );
+
         return fullVslDescription;
     }
 

@@ -26,6 +26,8 @@ public class GetVesselDetailsController extends HttpServlet {
         System.out.println("pomiedzy tutaj a");
         System.out.println(request.getParameter("vslChosen"));
         System.out.println("ttuuuutaj??");
+        GetDetails.getVslDetails(request.getParameter("vslChosen"));
+        System.out.println("koniec??");
 
 //        if (document.getElementByName('vslChosen').checked) {
 //             String vslNameAndIMO = document.getElementByName('vslChosen:checked').value;
