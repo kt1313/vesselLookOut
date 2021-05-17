@@ -36,12 +36,11 @@
                 </li>
             </c:forEach>
 
-                <button id="showDetails!!!">Show details</button>
+                <button>Show details</button>
                 <div id="div"></div>
         </ul>
         </form>
 
-</p>
     </c:if>
     <c:if test="${empty listOfVesselsWithNameAndIMO}">
 
@@ -50,15 +49,17 @@
 
     //listuje szczegóły wybranego statku
     <c:if test="${not empty fullVslDescription}">
-<%--    <form action="getDetails" method="post">--%>
-        <ul class="vsl-list">
+<%--        <form action="getVesselDetailsController" method="post">--%>
+        <ul class="vsl-details">
             <c:forEach var="vslDetails" items="${fullVslDescription}">
             <var i=0;></var>
+                <c:out value="proba"></c:out>
             <li><c:out value="${vslDetails}"/></li>
             </c:forEach>
         </ul>
 <%--    </form>--%>
     </c:if>
+
 </main>
 </body>
 </html>

@@ -20,21 +20,10 @@ public class GetVesselDetailsController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//tu należy otrzymac szczegoly vslNameAndIMO z buttona
-        //wchodzi tu bo wcisniety przycisk
-        //sprawdz ktory radio zaznaczony
-        System.out.println("pomiedzy tutaj a");
-        System.out.println(request.getParameter("vslChosen"));
-        System.out.println("ttuuuutaj??");
-        GetDetails.getVslDetails(request.getParameter("vslChosen"));
-        System.out.println("koniec??");
+        //tu należy otrzymac szczegoly vslNameAndIMO po wcisnieciu Show Details
 
-//        if (document.getElementByName('vslChosen').checked) {
-//             String vslNameAndIMO = document.getElementByName('vslChosen:checked').value;
-//        }
-//        String vslNameAndIMO = request.getParameter("selectedValue");
-//        GetDetails.getVslDetails(vslNameAndIMO);
-//        response.sendRedirect(request.getContextPath());
+        System.out.println(request.getParameter("vslChosen"));
+        GetDetails.getVslDetails(request.getParameter("vslChosen"));
     }
 
 }

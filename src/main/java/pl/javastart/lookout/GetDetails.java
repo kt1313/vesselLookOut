@@ -31,8 +31,8 @@ public class GetDetails {
             fullVslDescription.add(coordinatesLonElements.get(i).ownText());
         }
         System.out.println("Vessel: "+vslNameAndIMO);
-            System.out.println("Coordinate Lat: "+fullVslDescription.get(0) );
-            System.out.println("Coordinate Long: "+fullVslDescription.get(1) );
+            System.out.println("Coordinates Lat: "+fullVslDescription.get(2) );
+            System.out.println("Coordinates Long: "+fullVslDescription.get(3) );
 
         return fullVslDescription;
     }

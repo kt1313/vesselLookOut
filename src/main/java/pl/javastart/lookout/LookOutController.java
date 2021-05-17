@@ -24,17 +24,12 @@ public class LookOutController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         createVesselsList(getVslName(request));
         response.sendRedirect(request.getContextPath());
+//        createVesselDetails(vslChosen(request));
     }
 
     private String getVslName(HttpServletRequest request) {
         String vslName = request.getParameter("vslname");
         return vslName;
-    }
-
-    private String getUserChoice() {
-        Scanner sc = new Scanner(System.in);
-        String userChoice = sc.nextLine();
-        return userChoice;
     }
 
     private List<String> createVesselsList(String vslName) throws IOException {
