@@ -49,22 +49,17 @@
 
     //listuje szczegóły wybranego statku
     <c:if test="${not empty fullVslDescription}">
-        <%--        <form action="getVesselDetailsController" method="post">--%>
         <ul class="vsl-details">
-            <var i=0;>
-                <c:forEach var="vslDetails" items="${fullVslDescription}">
-                    <c:if test="i===2||i===3"><c:out value="${vslDetails}"></c:out>
-                    </c:if>
-                    <var i=i+1></var>
-                    <li>
-                        <c:out value="Coordinates lat and lon: "></c:out>
-                        <c:out  value="${vslDetails}"></c:out>
+            <c:forEach var="vslDetails" items="${fullVslDescription}" begin="2" end="3">
+                <p>
+                <li>
+                    <c:out value="Coordinates lat and lon: "></c:out>
+                    <c:out value="${vslDetails}"></c:out>
 
-                    </li>
-                </c:forEach>
-            </var>
+                </li>
+                </p>
+            </c:forEach>
         </ul>
-        <%--    </form>--%>
     </c:if>
 
 </main>
