@@ -39,6 +39,9 @@ public class ListOfVessels {
         List<String> listOfVesselsNames = new ArrayList<>();
         List<String> listOfVesselsIMOs = new ArrayList<>();
 
+//tworzenie listy statkow z nazwa i IMO na podstawie zadanego parametru wyszukiwania
+//        i printowanie na konsoli
+
         Connection connect = Jsoup.connect("https://www.shiplocation.com/vessels?page=1&vessel=" + vslName + "&sort=none&direction=none&flag=none");
         Document document = connect.get();
         Elements vElements = document.getElementsByClass("vessel_td");

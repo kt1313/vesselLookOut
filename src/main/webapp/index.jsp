@@ -21,13 +21,14 @@
         <button>Search!</button>
     </form>
 
-    //listuje statki o podobnej nazwie jesli wcisniety przycisk Search
+<%--    //listuje statki o podobnej nazwie jesli wcisniety przycisk Search--%>
     <c:if test="${not empty listOfVesselsWithNamesAndIMO}">
         <form action="getVesselDetailsController" method="post">
 
-            <ul class="vsl-list">
+            <p class="vsl-list">
                 <p></p>
                 <c:out value="Looking for ">vslname</c:out>
+                <c:out value="${vslname}"/>
                 <p></p>
                 <c:forEach var="vsl" items="${listOfVesselsWithNamesAndIMO}">
                     <var i=0;></var>
@@ -37,28 +38,30 @@
                 </c:forEach>
 
                 <button>Show details</button>
-                <div id="div"></div>
+                 <div id="div1"></div>
             </ul>
+
+    </c:if>
         </form>
+    <p></p>
 
-    </c:if>
-    <c:if test="${empty listOfVesselsWithNameAndIMO}">
-
-        <p>Searching not started yet</p>
-    </c:if>
-
-    //listuje szczegóły wybranego statku
+<%--    //listuje szczegóły wybranego statku--%>
     <c:if test="${not empty fullVslDescription}">
         <ul class="vsl-details">
-            <c:forEach var="vslDetails" items="${fullVslDescription}" begin="2" end="3">
-                <p>
-                <li>
-                    <c:out value="Coordinates lat and lon: "></c:out>
-                    <c:out value="${vslDetails}"></c:out>
+            <p>
+                <c:out value="Details of your vessel: " >vslname</c:out>
+            <c:out value="${vslname}"/>
+            </p>
+            <c:forEach var="vslDetails" items="${fullVslDescription}" >
 
-                </li>
-                </p>
+<%--                    <c:out value="Coordinates lat: "></c:out>--%>
+                <p> <c:out value="${vslDetails}"></c:out></p>
             </c:forEach>
+<%--            <c:forEach var="vslDetails" items="${fullVslDescription}" begin="3" end="3">--%>
+<%--                    <c:out value="Coordinates long: "></c:out>--%>
+<%--                    <c:out value="${vslDetails}"></c:out>--%>
+
+<%--            </c:forEach>--%>
         </ul>
     </c:if>
 
